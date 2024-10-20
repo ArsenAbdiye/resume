@@ -1,93 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Rethink Sans", sans-serif;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+header{
+    width: 100%;
+    height: 100vh;
+    background-color: #161D6F   ;
 }
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+.mainbanner{
+    display: flex;
+    padding: 100px 300px;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    color: white;
     text-align: center;
 }
+.nav_buttons{
+    margin-top: 30px;
 
-nav ul {
-    list-style: none;
-    padding: 0;
 }
+.navigation a {
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
+    padding: 10px 15px;
+    border: 1px solid #F5F5F5;
+    color: #F5F5F5;
+    border-radius: 10px;
+    flex: 0 0 auto;
     text-decoration: none;
+    transition: .5s;
 }
 
-.about_me, .experience {
-    padding: 20px;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 8px;
-    max-width: 800px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.navigation a:hover {
+    background-color: #F5F5F5;
+    color: #161D6F;
 }
 
-.about_me_image {
+h1{
+    font-size: 40px;
+}
+.navigation h5{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.about_me{
+    background-color: #0B2F9F;
+    width: 100%;
+    height: 80vh;
     text-align: center;
-    margin-bottom: 20px;
+    padding: 40px 0;
+    color: white;
+}
+.about_me_contaainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 230px;
+    margin: 30px auto;
 }
 
-.about_me_image img {
-    max-width: 100%;
-    border-radius: 50%;
+.about_me_text{
+    padding: 20px;
 }
 
-.about_cards {
+.about_cards{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+}
+.about_card{
+    background-color: #161D6F;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.about_card h6{
+    font-size: 13px;
+    font-weight: 400;
+}
+svg{
+    width: 20px;
+    margin-left: 25%;
+}
+.add_header{
+    display: flex;
+}
+.experience{
+    width: 100%;
+    height: 100vh;
+    background-color: #227B94;
+    text-align: center;
+    padding: 50px 100px;
+    color: white;
+}
+
+.ex_container{
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 20px;
+    
 }
-
-.about_card {
-    flex: 1 1 45%; /* Две карточки в строке */
-    margin: 10px;
+.experience_items{
+    flex: 0 0 calc(50% - 20px);
+    height: 200px;
+    background-color: #161D6F;
+    color: white;
     padding: 10px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    
 }
-
-.add_header {
-    display: flex;
-    align-items: center;
+.experience_items h4{
+    font-weight: 400;
 }
-
-.icon_additional {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-}
-
-.experience_item {
+.exp_title{
     margin-bottom: 20px;
 }
 
-footer {
+.work{
+    padding: 20px 0;
+    background-color: #227B94;
+    color: white;
     text-align: center;
-    padding: 20px;
-    background: #333;
-    color: #fff;
-    position: relative;
-    bottom: 0;
+}
+.leadership{
+    padding: 20px 0;
+    background-color: #227B94;
+    color: white;
+    text-align: center;
+}
+.work_items{
+    width: 30%;
+    height: auto;
+    padding: 30px 10px;
+    background-color: #0B2F9F;
+    border-radius: 10px;
+    margin: 50px auto;
+}
+.wk_img{
+    width: 60px;
+    border-radius: 50%;
+}
+.work_text{
+    font-weight: 400;
+    color: #b9b9b9;
+}
+.portfolio{
+    background-color: #0B2F9F;
     width: 100%;
+    padding: 30px 100px;
+    text-align: center;
+    color: white;
+}
+
+.porfolio_cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
+}
+.pr_card{
+    flex: 0 0 calc(30% - 20px);
+    height: 270px;
+    background-color: #227B94;
+    margin: 0 auto; 
+    padding: 10px;
+}
+
+.pr_img{
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+
+}
+.pr_card img{
+    width: 100%;
+    border-radius: 0px;
+}
+.pr_buttons{
+    margin-top: 20px;
+}
+.pr_buttons a   {
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    margin-top: auto;
+    transition: .5s;
+}
+
+.pr_buttons a:hover   {
+    background-color:white;
+    color: #227B94;
+}
+.inp_form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    color: white;
+}
+input::placeholder{
+    color: white;
+}
+textarea::placeholder{
+    color: white;
+}
+.inp_form input{
+    border: 0;
+    text-decoration: none;
+    background: transparent;
+    padding: 1.5rem;
+    width: 100%;
+    background-color: #227B94;
+    color: white;
+    border-radius: 10px;
+}
+.inp_form textarea{
+    border-radius: 10px;
+    border: 0;
+    text-decoration: none;
+    background: transparent;
+    padding: 1.5rem;
+    width: 100%;
+    background-color: #227B94;
+    color: white;
+}
+.conect{
+    background-color: #0B2F9F;
+    padding: 20px 200px;
+    text-align: center;
+    color: white;
+    padding-bottom: 60px;
+}
+.inps{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.inp{
+    width: 50%;
+}
+.links{
+    display: flex;
+    align-items: center;    
+    flex-direction: column;
+}
+.links a{
+    padding: 40px 50px;
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    border: 1px solid #227B94;
+    border-radius: 10px;
+    transition: .5s;
+}
+.links a:hover{
+    background-color: #227B94;
+}
+
+.inp_form button{
+    padding: 10px 5px;
+    width: 120px;
+    border: 1px solid #227B94;
+    border-radius: 10px;
+    background: none;
+    color: white;
+    transition: .5s;
+}
+.inp_form button:hover{
+    background-color: #227B94;
+}
+
+footer{
+    padding: 50px 200px;
+    text-align: center;
+    color: white;
+    background-color: #001F3F;
+}
+
+.main_image{
+    width: 400px;
+    margin: 0;
+}
+.about_me_img{
+    width: 300px;
 }

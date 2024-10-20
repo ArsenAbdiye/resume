@@ -13,7 +13,7 @@
             <div class="mainbanner">
                 <div class="navigation">
                     {% for main in main_info %}
-                    <h5>Привет, меня зовут</h5>
+                    <h5>Hello I'm</h5>
                     <h1>{{main.fullname}}</h1>
                     <p>{{main.profession}}</p>
                     <div class="nav_buttons">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="banner_image">
-                    <img class="main_image" src={{main.image}}>
+                    <img class="main_image" src="{{main.image.url}}">
                 </div>
                 {% endfor %}
             </div>
@@ -30,60 +30,110 @@
         <div class="about_me">
             <h2>About Me</h2>
             {% for main in main_info %}
-            <div class="about_me_image">
-                <img class="about_me_img" src={{main.image}}>
-            </div>
-            <div class="about_me_text">
-                <h3>
-                    {{main.about_me | safe}}
-                </h3>
-                <div class="about_cards">
-                    {% for add in additional %}
-                    <article class="about_card">
-                        <div class="add_header">
-                            <img class="icon_additional" src="{{add.icon}}">
-                            <h4 class="add_title">{{add.title}}</h4>
-                        </div>
-                        <h6 class="add_text">{{add.text | safe}}</h6>
-                    </article>
-                    {% endfor %}
+            <div class="about_me_contaainer">
+                <div class="about_me_image">
+                    <img class="about_me_img" src="{{main.image.url}}">
+                </div>
+                <div class="about_me_text">
+                    <h3>
+                        {{main.about_me | safe}}
+                    </h3>
+                    <div class="about_cards">
+                        {% for add in additional %}
+                        <article class="about_card">
+                            <div class="add_header">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="about__icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg>
+                                <h4 class="add_title">{{add.title}}</h4>
+                            </div>
+                            <h6 class="add_text">{{add.text | safe}}</h6>
+                        </article>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
             {% endfor %}
         </div>
-        <div class="experience">
+        <div class="experience">    
             <h3>Мой опыт</h3>
-            {% for exp in experience %}
-            <div class="experience_items">
-                <h3 class="exp_title">{{exp.title}}</h3>
-                <h6 class="exp_text">{{exp.text | safe}}</h6>
+            <div class="ex_container">
+                {% for exp in experience %}
+                <div class="experience_items">
+                    <h3 class="exp_title">{{ exp.title }}</h3>
+                    <h6 class="exp_text">{{ exp.text | safe }}</h6>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
         <div class="work">
-            <h2 class="work_title">Опыт работы</h2>
-            <article class="work_items">
-                {% for wk in work_experience %}
-                <svg class="work_icon">{{wk.icon}}</svg>
+            <h2 class="work_title">Work</h2>
+            {% for wk in work_experience %}
+            <div class="work_items">
+                <img class="wk_img" src="{{wk.icon.url}}">
                 <h5 class="work_title">{{wk.company_name}}</h5>
                 <h5 class="work_position">{{wk.position}}</h5>
                 <small class="work_text">{{wk.responsibility | safe}}</small>
-                {% endfor %}
-            </article>
+            </div>
+            {% endfor %}
+
 
         </div>
         <div class="leadership">
-            <h2 class="work_title">Опыт лидерства</h2>
-            <article class="work_items">
+            <h2 class="work_title">Leadership</h2>
+            <div class="work_items">
                 {% for leader in leadership %}
-                <svg class="work_icon">{{leader.icon}}</svg>
+                <img class="wk_img" src="{{leader.icon.url}}">
                 <h5 class="work_title">{{leader.company_name}}</h5>
                 <h5 class="work_position">{{leader.position}}</h5>
                 <small class="work_text">{{leader.responsibility | safe}}</small>
                 {% endfor %}
-            </article>
+            </div>
 
         </div>
+
+        <div class="portfolio">
+            <p>My Recent Projects</p>
+            <h2>Portfolio</h2>
+            <div class="porfolio_cards">
+                {% for pr in portfolio %}
+                <div class="pr_card">
+                    <div class="pr_img">
+                        <img class="wk_img" src="{{pr.image.url}}">
+                    </div>
+                    <h4 class="work_title">{{pr.project_name}}</h4>
+                    <div class="pr_buttons">
+                        <a href="">Github</a>
+                        <a href="">Live Demo</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="conect">
+            <p>Get In Touch</p>
+            <h2>Contact Me</h2>
+            <div class="inps">
+                <div class="links">
+                    <a href="">Email</a>
+                    <a href="">Phone</a>
+                </div>
+                <div class="inp">
+                    <form class="inp_form" action="">
+                        <input type="text" name="name" placeholder="Your Full Name" required="">
+                        <input type="email" name="email" placeholder="Your Email" required="">
+                        <textarea type="message" name="message" rows="7" placeholder="Your Message" required=""></textarea>
+                        <button type="submit" class="btn btn-primary">Send message!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            {% for main in main_info %}
+            <h2>{{main.fullname}}</h2>
+
+
+            {% endfor %}
+        </footer>
     </div>
 </body>
 </html>
